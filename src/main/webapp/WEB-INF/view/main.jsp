@@ -62,37 +62,46 @@ a {
 </style>
 </head>
 <body>
-	<div id="formsearch">
-		<c:choose>
-			<c:when test="${empty login}">
-				<a href='/user/login'>로그인</a>
-			</c:when>
-			<c:otherwise>
-					<c:out value ="${nickname }"></c:out>님 환영합니다.   <a href='/user/logout'>로그아웃</a>
-			</c:otherwise>
-		</c:choose>
+	<div class="container">
+		<div id="formsearch">
+			<c:choose>
+				<c:when test="${empty login}">
+					<a href='/user/login'>로그인</a>
+				</c:when>
+				<c:otherwise>
+					<c:out value="${nickname }"></c:out>님 환영합니다.   <a
+						href='/user/logout'>로그아웃</a>
+				</c:otherwise>
+			</c:choose>
 
-		<form action="/board/showselect" method="POST">
-			<input type="text" placeholder="검색어를 입력해주세요."
-				onfocus="this.placeholder = ''"
-				onblur="this.placeholder= '검색어를 입력해주세요'" name="search_box">
-			<button type="submit" class="">대충사진</button>
-		</form>
-	</div>
+			<form action="/board/showselect" method="POST" >
+				<div class="col-md-6 float-start me-2">
+					<input type="text" placeholder="검색어를 입력해주세요."
+						onfocus="this.placeholder = ''"
+						onblur="this.placeholder= '검색어를 입력해주세요'" name="search_box"
+						class="form-control">
+				</div>
+				<div>
+				<button type="submit" class="btn btn-primary">검색</button>
+				</div>
+				
+			</form>
+		</div>
 
-	<div id="menu">
-		<ul>
-			<li><a href="#none">카테고리</a>
-				<ul>
-					<li><a href="board/category/1">가전제품</a></li>
-					<li><a href="board/category/2">자동차</a></li>
-					<li><a href="board/category/3">PC</a></li>
-				</ul></li>
-		</ul>
-	</div>
-	<!-- main -->
-	<div class="">
-		<p>내용 들어갈 공오오오옹오오옹간</p>
+		<div id="menu">
+			<ul>
+				<li><a href="#none">카테고리</a>
+					<ul>
+						<li><a href="board/category/1">가전제품</a></li>
+						<li><a href="board/category/2">자동차</a></li>
+						<li><a href="board/category/3">PC</a></li>
+					</ul></li>
+			</ul>
+		</div>
+		<!-- main -->
+		<div class="">
+			<p>내용 들어갈 공오오오옹오오옹간</p>
+		</div>
 	</div>
 </body>
 </html>
